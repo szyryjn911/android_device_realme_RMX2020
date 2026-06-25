@@ -77,3 +77,6 @@ wifi.tethering.interface=ap0
 
 # Zygote
 ro.zygote.preload.enable=0
+
+# Lunaris Maintainer
+ro.lunaris.maintainer=szyryjn
