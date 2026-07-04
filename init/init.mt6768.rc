@@ -862,12 +862,37 @@ on property:sys.boot_completed=1
 on property:sys.boot_completed=1
     setprop vendor.powerhal.init 1
 
-service vendor.charger /system/bin/charger
+service charger /system/bin/charger
     class charger
     user system
     group system graphics wakelock input
     capabilities SYS_BOOT
-    seclabel u:r:charger:s0
+    file /dev/kmsg w
+    file /sys/fs/pstore/console-ramoops-0 r
+    file /sys/fs/pstore/console-ramoops r
+    file /proc/last_kmsg r
+
+service debug_dmesg /system/bin/sh -c "dmesg -w > /cache/boot_dmesg.txt"
+    class charger
+    user root
+    group root system
+    disabled
+    oneshot
+
+service logger /system/bin/logcat -b all -D -f /cache/boot_log.txt
+    class main charger
+    user root
+    group root system
+    disabled
+    oneshot
+
+on charger
+    write /cache/boot_dmesg.txt ""
+    chmod 0666 /cache/boot_dmesg.txt
+    write /cache/boot_log.txt ""
+    chmod 0666 /cache/boot_log.txt
+    start logger
+    start debug_dmesg
 
 # reset mdmode when modem crash happens in ATM
 on property:vendor.mtk.md1.status=reset

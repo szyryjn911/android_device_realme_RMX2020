@@ -74,6 +74,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     disable_configstore
 
+# Charger
+PRODUCT_PACKAGES += \
+    charger_res_images_vendor
+
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-resources \
