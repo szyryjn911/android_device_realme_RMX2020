@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<displayDeviceConfig>
+    <name>Built-in Screen</name>
+    <screenBrightnessMap>
+        <point>
+            <value>0.0</value>
+            <nits>2.0</nits>
+        </point>
+        <point>
+            <value>0.4</value>
+            <nits>150.0</nits>
+        </point>
+        <point>
+            <value>1.0</value>
+            <nits>480.0</nits>
+        </point>
+    </screenBrightnessMap>
+    <screenBrightnessDefault>0.4</screenBrightnessDefault>
+    <backlight>
+        <brightnessMap>
+            <point>
+                <first>0</first>
+                <second>0.0</second>
+            </point>
+            <point>
+                <first>819</first>
+                <second>0.4</second>
+            </point>
+            <point>
+                <first>2047</first>
+                <second>1.0</second>
+            </point>
+        </brightnessMap>
+    </backlight>
+    <autoBrightness>
+        <brighteningLightDebounceMillis>4000</brighteningLightDebounceMillis>
+        <darkeningLightDebounceMillis>8000</darkeningLightDebounceMillis>
+        <displayBrightnessMapping>
+            <displayBrightnessPoint>
+                <lux>0</lux>
+                <nits>2.0</nits>
+            </displayBrightnessPoint>
+            <displayBrightnessPoint>
+                <lux>50</lux>
+                <nits>150.0</nits>
+            </displayBrightnessPoint>
+            <displayBrightnessPoint>
+                <lux>1000</lux>
+                <nits>480.0</nits>
+            </displayBrightnessPoint>
+        </displayBrightnessMapping>
+    </autoBrightness>
+</displayDeviceConfig>
