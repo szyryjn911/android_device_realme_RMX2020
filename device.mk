@@ -345,7 +345,7 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/mediatek/libmtkperf_client \
     hardware/mediatek/libaedv \
     hardware/mediatek/wlan/wifi_hal \
-    hardware/lineage/interfaces/power-libperfmgr \
+    hardware/clover/interfaces/power-libperfmgr \
     $(DEVICE_PATH)
 
 # Text classifier
