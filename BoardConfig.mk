@@ -153,7 +153,7 @@ TARGET_RECOVERY_UI_MARGIN_HEIGHT := 64
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 
 # Security patch level
-VENDOR_SECURITY_PATCH := 2022-05-05
+VENDOR_SECURITY_PATCH := 2026-07-07
 
 # Sepolicy
 include device/mediatek/sepolicy_vndr/SEPolicy.mk
