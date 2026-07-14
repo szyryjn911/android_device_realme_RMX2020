@@ -23,6 +23,6 @@ def AddImage(info, basename, dest):
 
 def OTA_InstallEnd(info):
   info.script.Print("Patching firmware images...")
-  AddImage(info, "dtbo.img", "/dev/block/by-name/dtbo")
+  Remove dtbo.img from OTA installation process
   AddImage(info, "vbmeta.img", "/dev/block/by-name/vbmeta")
   return
