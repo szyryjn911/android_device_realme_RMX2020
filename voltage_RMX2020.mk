@@ -37,9 +37,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.fingerprint=$(BuildFingerprint)
 
 # Bootanimation Resolution.
-TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_BOOT_ANIMATION_RES := 720
 
 # VoltageOS flags.
 TARGET_FACE_UNLOCK_SUPPORTED := true
 VOLTAGE_BUILD_TYPE := UNOFFICIAL
 WITH_GMS := false
+
+# call for keys
+include vendor/voltage-priv/keys/keys.mk
