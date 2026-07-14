@@ -140,8 +140,14 @@ impl LightsService {
 
 impl Default for LightsService {
     fn default() -> Self {
+        // NOTE: id must start at 0 to match LightType::BACKLIGHT's enum value (0).
+        // The framework (LightsService.java) uses each light's `id` directly as the
+        // index into its internal mLightsByType[] array, so id must equal the light's
+        // type. Starting the range at 1 (previous bug) put this light under the
+        // KEYBOARD slot instead of BACKLIGHT, leaving mLightsByType[BACKLIGHT] = null
+        // and silently breaking all backlight writes from BacklightAdapter.
         let id_mapping = |light_id| HwLight { id: light_id, ordinal: light_id, r#type: LightType::BACKLIGHT };
-        Self::new((1..=NUM_DEFAULT_LIGHTS).map(id_mapping))
+        Self::new((0..NUM_DEFAULT_LIGHTS).map(id_mapping))
     }
 }
 
