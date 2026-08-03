@@ -86,6 +86,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.memtrack-service.mediatek
 
+# Dolby
+$(call inherit-product, vendor/dolby/dolby-setup.mk)
+
 # Doze
 PRODUCT_PACKAGES += \
     OplusDoze
