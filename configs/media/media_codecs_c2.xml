@@ -257,4 +257,5 @@
             <Feature name="bitrate-modes" value="VBR,CBR" />
         </MediaCodec>
     </Encoders>
+    <Include href="media_codecs_dolby.xml" />
 </MediaCodecs>

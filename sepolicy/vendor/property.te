@@ -1,5 +1,7 @@
 # Audio
 vendor_public_prop(vendor_audio_tuning_prop)
+attribute vendor_audio_prop;
+typeattribute vendor_mtk_audio_prop vendor_audio_prop;
 
 # Camera
 vendor_public_prop(vendor_oplus_camera_prop)

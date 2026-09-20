@@ -90,6 +90,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.memtrack-service.mediatek
 
+# Dolby
+$(call inherit-product, vendor/dolby/dolby-setup.mk)
+TARGET_SUPPORTS_DOVI := true
+
 # Doze
 PRODUCT_PACKAGES += \
     OplusDoze
@@ -121,9 +125,8 @@ PRODUCT_PACKAGES += \
 
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.1-impl \
-    android.hardware.health@2.1-impl.recovery \
-    android.hardware.health@2.1-service
+    android.hardware.health-service.mediatek \
+    android.hardware.health-service.mediatek-recovery
 
 # HIDL
 PRODUCT_PACKAGES += \
