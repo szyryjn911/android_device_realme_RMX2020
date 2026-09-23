@@ -141,6 +141,9 @@ $(call inherit-product, hardware/mediatek/frameworks/mediatek-frameworks.mk)
 # Init
 $(call soong_config_set,libinit,vendor_init_lib,//$(DEVICE_PATH):libinit_RMX2020)
 
+# ION
+$(call soong_config_set_bool,libion,legacy_impl,true)
+
 # Kernel
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 PRODUCT_ENABLE_UFFD_GC := true
