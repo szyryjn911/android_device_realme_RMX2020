@@ -396,3 +396,9 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(DEVICE_PATH)/configs/wifi/,$(TARGET_COPY_OUT_VENDOR)/etc/wifi)
+
+# Egis fp fix
+PRODUCT_COPY_FILES += \
+    device/realme/RMX2020/prebuilt/fingerprint/vendor.egistec.hardware.fingerprint@4.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.egistec.hardware.fingerprint@4.0.so
+
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.fp.vendor=et512
