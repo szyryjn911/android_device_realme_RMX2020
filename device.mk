@@ -102,10 +102,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fastbootd
 
-# Fingerprint
-PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.RMX2020
-
 # FM Radio
 PRODUCT_PACKAGES += \
     FMRadio
