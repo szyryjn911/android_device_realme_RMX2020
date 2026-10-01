@@ -104,7 +104,7 @@
             <!-- profiles and levels:  ProfileHigh : Level51 -->
             <Limit name="block-count" range="1-16384" />
             <Limit name="blocks-per-second" range="1-491520" />
-            <Limit name="bitrate" range="1-40000000" />
+            <Limit name="bitrate" range="1-3200000" />
             <Feature name="adaptive-playback" />
         </MediaCodec>
         <MediaCodec name="c2.android.hevc.decoder" type="video/hevc" update="true">
@@ -135,7 +135,7 @@
             <Limit name="size" min="2x2" max="1280x1280" />
                 <Limit name="block-count" range="1-3600" /> <!-- max 1280x720 -->
                 <Limit name="blocks-per-second" range="1-108000" />
-                <Limit name="bitrate" range="1-5000000" />
+                <Limit name="bitrate" range="1-3200000" />
             <Feature name="adaptive-playback" />
         </MediaCodec>
         <MediaCodec name="c2.android.av1.decoder" type="video/av01" update="true">
@@ -144,7 +144,7 @@
             <Limit name="block-size" value="16x16" />
             <Limit name="block-count" range="1-16384" />
             <Limit name="blocks-per-second" range="1-2073600" />
-            <Limit name="bitrate" range="1-120000000" />
+            <Limit name="bitrate" range="1-3200000" />
             <Feature name="adaptive-playback" />
         </MediaCodec>
         <MediaCodec name="c2.android.mpeg2.decoder" type="video/mpeg2" domain="tv">
