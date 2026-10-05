@@ -33,9 +33,6 @@
     <!-- boolean indicating whether or not to reset max client setting configuration during cloud configuration restore -->
     <bool translatable="false" name ="config_wifiSoftapResetMaxClientSettingConfig">false</bool>
 
-    <!-- Wifi driver supports 5GHz band for softap when chip support 5GHz -->
-    <bool translatable="false" name="config_wifiSoftap5ghzSupported">false</bool>
-
     <!-- Indicate the driver support NL80211_REG_CHANGED event. -->
     <bool translatable="false" name="config_wifiDriverSupportedNl80211RegChangedEvent">true</bool>
 </resources>
