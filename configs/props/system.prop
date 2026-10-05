@@ -49,7 +49,7 @@ ro.build.display.wtid.mp=SW_S98670AA1_V010_USRD_TEST
 
 # LMKD
 ro.config.low_ram=false
-ro.lmk.log_stats=true
+#ro.lmk.log_stats=true
 
 # Order
 ro.product.property_source_order=odm,vendor,product,system

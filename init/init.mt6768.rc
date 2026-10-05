@@ -883,3 +883,6 @@ on property:persist.vendor.radio.port_index=""
 # Disable AOSP RIL if MTK RIL is up
 on property:vendor.ril.mtk=1
     stop vendor.ril-daemon
+
+on property:sys.boot_completed=1
+    stop lmkd
