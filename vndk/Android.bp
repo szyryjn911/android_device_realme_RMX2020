@@ -25,6 +25,9 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "android.hardware.graphics.common-V2-ndk_platform-v32",
+    // libui-v32.so (VNDK 32) has DT_NEEDED on the unsuffixed filename;
+    // keep the module name unique but install under the original filename.
+    stem: "android.hardware.graphics.common-V2-ndk_platform",
     shared_libs: [
         "android.hardware.common-V2-ndk_platform-v32",
     ],
@@ -43,6 +46,9 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "android.hardware.common-V2-ndk_platform-v32",
+    // libui-v32.so (VNDK 32) has DT_NEEDED on the unsuffixed filename;
+    // keep the module name unique but install under the original filename.
+    stem: "android.hardware.common-V2-ndk_platform",
     strip: {
         none: true,
     },
