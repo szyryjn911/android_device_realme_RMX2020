@@ -16,6 +16,7 @@ $(call inherit-product, vendor/realme/RMX2020/RMX2020-vendor.mk)
 $(call inherit-product, vendor/realme/RMX2020-ims/RMX2020-ims.mk)
 
 PRODUCT_SHIPPING_API_LEVEL := 29
+PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
 
 # Dynamic Partition
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
@@ -341,7 +342,6 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/mediatek \
     hardware/mediatek/libmtkperf_client \
     hardware/mediatek/wlan/wifi_hal \
-    hardware/lineage/interfaces/power-libperfmgr \
     $(DEVICE_PATH)
 
 # Text classifier
