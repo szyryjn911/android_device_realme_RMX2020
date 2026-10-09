@@ -279,6 +279,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
+# Rising OTA banner needs these legacy props
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.build.product=$(TARGET_DEVICE) \
+    ro.product.manufacturer=realme
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.recovery.mt6768.rc \
