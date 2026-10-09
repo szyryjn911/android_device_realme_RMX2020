@@ -5,7 +5,6 @@ persist.vendor.audio.tuning.def_path           u:object_r:vendor_audio_tuning_pr
 vendor.oppo.camera.                            u:object_r:vendor_oplus_camera_prop:s0
 ro.vendor.oplus.camera.                        u:object_r:vendor_oplus_camera_prop:s0
 persist.vendor.camera.                         u:object_r:vendor_oplus_camera_prop:s0
-persist.vendor.camera.privapp.list             u:object_r:vendor_oplus_camera_prop:s0
 persist.vendor.mtkcam.aosp_hal_version         u:object_r:vendor_oplus_camera_prop:s0
 
 # Fingerprint
