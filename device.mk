@@ -70,10 +70,6 @@ TARGRT_SCREEN_HIGHT := 1280
 PRODUCT_PACKAGES += \
     Aperture
 
-# Configstore
-PRODUCT_PACKAGES += \
-    disable_configstore
-
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images_vendor
