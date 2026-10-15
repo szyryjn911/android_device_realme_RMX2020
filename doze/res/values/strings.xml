@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="doze_settings_help_title">About Doze</string>
+    <string name="doze_settings_help_text">Configure when the display wakes for pickup, hand wave and pocket events.</string>
+    <string name="dialog_ok">OK</string>
+</resources>
