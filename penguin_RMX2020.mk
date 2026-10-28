@@ -1,3 +1,5 @@
+PENGUIN_CUSTOM_BOOTANIMATION := true
+PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 #
 # Copyright (C) 2018-2022 ArrowOS
 #
@@ -12,8 +14,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/non_ab_device.mk)
 # Inherit from device makefile
 $(call inherit-product, device/realme/RMX2020/device.mk)
 
-# Inherit some common crDroid stuff.
-$(call inherit-product, vendor/penguin/config/common_full_phone.mk)
+# Inherit PenguinOS common config
+$(call inherit-product, vendor/penguin/config/common.mk)
+$(call inherit-product, vendor/penguin/config/gsm.mk)
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := penguin_RMX2020
@@ -35,3 +38,7 @@ PRODUCT_GMS_CLIENTID_BASE := android-oppo
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.fingerprint=$(BuildFingerprint)
+
+# 720x1600 panel ke liye resized bootanimation
+PRODUCT_COPY_FILES := $(filter-out vendor/penguin/bootanimation/bootanimation.zip:%,$(PRODUCT_COPY_FILES))
+PRODUCT_COPY_FILES += device/realme/RMX2020/bootanimation/bootanimation.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip

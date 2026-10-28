@@ -73,6 +73,12 @@ BOARD_DTB_OFFSET := $(BOARD_KERNEL_TAGS_OFFSET)
 
 BOARD_BOOT_HEADER_VERSION := 2
 
+TARGET_KERNEL_ARCH := arm64
+KERNEL_ARCH := arm64
+KERNEL_MAKE_CMD := prebuilts/build-tools/linux-x86/bin/make
+KERNEL_CROSS_COMPILE := CROSS_COMPILE=aarch64-linux-gnu- AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip READELF=llvm-readelf
+KERNEL_BUILD_OUT_PREFIX := $(shell pwd)/
+TARGET_KERNEL_ADDITIONAL_FLAGS := HOSTCC=clang HOSTCXX=clang++ HOSTLD=ld.lld
 TARGET_KERNEL_SOURCE := kernel/realme/RMX2020
 TARGET_KERNEL_CONFIG := RMX2020_defconfig
 TARGET_KERNEL_CLANG_COMPILE := true
@@ -82,7 +88,7 @@ BOARD_KERNEL_IMAGE_NAME := Image.gz
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 
 BOARD_KERNEL_SEPARATED_DTBO := true
-BOARD_INCLUDE_RECOVERY_DTBO := true
+# BOARD_INCLUDE_RECOVERY_DTBO := true
 
 BOARD_MKBOOTIMG_ARGS += --base $(BOARD_KERNEL_BASE)
 BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_KERNEL_PAGESIZE)
@@ -94,7 +100,7 @@ BOARD_MKBOOTIMG_ARGS += --dtb_offset $(BOARD_DTB_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 
 # Manifest
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     $(DEVICE_PATH)/configs/manifests/device_framework_compatibility_matrix.xml \
     hardware/mediatek/vintf/mediatek_framework_compatibility_matrix.xml
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/manifests/manifest.xml
@@ -121,8 +127,6 @@ BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_ODMIMAGE_FILE_SYSTEM_TYPE := ext4
-
--include vendor/lineage/config/BoardConfigReservedSize.mk
 
 TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 TARGET_COPY_OUT_PRODUCT := product
@@ -176,3 +180,9 @@ WIFI_DRIVER_STATE_ON := "1"
 WIFI_DRIVER_STATE_OFF := "0"
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
+
+# Kernel (built by vendor/penguin/build/tasks/kernel.mk)
+TARGET_KERNEL_VERSION := 4.14
+TARGET_NEEDS_DTBOIMAGE := true
+BOARD_PREBUILT_DTBOIMAGE := $(PRODUCT_OUT)/prebuilt_dtbo.img
+TARGET_DTBO_LIST_WILDCARD := arch/arm64/boot/dts/mediatek/*

@@ -63,8 +63,6 @@ PRODUCT_PACKAGES += \
     libbluetooth_audio_session
 
 # Bootanimation
-TARGET_SCREEN_WIDTH := 720
-TARGRT_SCREEN_HIGHT := 1280
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -249,7 +247,7 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service.lineage-libperfmgr
+    android.hardware.power-service.pixel-libperfmgr
 
 PRODUCT_PACKAGES += \
     libmtkperf_client_vendor \
@@ -263,9 +261,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
-# PowerOffAlarm
-PRODUCT_PACKAGES += \
-    PowerOffAlarm
 
 # Properties
 -include $(DEVICE_PATH)/configs/props/vendor_logging_prop.mk
@@ -331,22 +326,16 @@ PRODUCT_COPY_FILES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     hardware/google/interfaces \
-    hardware/google/pixel/pixelstats \
-    hardware/google/pixel/power-libperfmgr \
-    hardware/google/pixel/thermal \
+    hardware/google/pixel \
     hardware/mediatek \
     hardware/mediatek/libmtkperf_client \
     hardware/mediatek/wlan/wifi_hal \
-    hardware/lineage/interfaces/power-libperfmgr \
+    hardware/statix/interfaces/power-libperfmgr \
     $(DEVICE_PATH)
 
 # Text classifier
 PRODUCT_PACKAGES += \
     libtextclassifier_hash.vendor
-
-# Touch
-PRODUCT_PACKAGES += \
-    vendor.lineage.touch-service.RMX2020
 
 # Thermal
 PRODUCT_PACKAGES += \
@@ -367,11 +356,6 @@ PRODUCT_PACKAGES += \
 $(call soong_config_set_bool,mediatek_vibrator,supports_effects,true)
 PRODUCT_PACKAGES += \
     android.hardware.vibrator-service.mediatek
-
-# VNDK
-PRODUCT_PACKAGES += \
-    libutils-v32 \
-    libui-v32
 
 PRODUCT_PACKAGES += \
     libunwindstack.vendor \
@@ -397,3 +381,10 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(DEVICE_PATH)/configs/wifi/,$(TARGET_COPY_OUT_VENDOR)/etc/wifi)
+
+# adb defaults like eng on userdebug
+PRODUCT_SYSTEM_PROPERTIES += \
+    persist.sys.usb.config=adb \
+    persist.service.adb.enable=1 \
+    persist.service.debuggable=1 \
+    ro.adb.secure=0
