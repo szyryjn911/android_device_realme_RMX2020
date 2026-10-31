@@ -74,12 +74,19 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <!-- Touch -->
     <hal format="aidl" optional="true">
-        <name>vendor.lineage.touch</name>
+        <name>vendor.aospa.power</name>
         <version>1</version>
         <interface>
-            <name>ITouchscreenGesture</name>
+            <name>IPowerFeature</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.qti.hardware.wifi.supplicant</name>
+        <version>1</version>
+        <interface>
+            <name>ISupplicantVendor</name>
             <instance>default</instance>
         </interface>
     </hal>

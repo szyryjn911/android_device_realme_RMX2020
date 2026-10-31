@@ -135,7 +135,6 @@ PRODUCT_PACKAGES += \
     vndservicemanager
 
 # IMS
-$(call inherit-product, hardware/lineage/compat/frameworks/compat.mk)
 $(call inherit-product, hardware/mediatek/frameworks/mediatek-frameworks.mk)
 
 # Init
@@ -249,7 +248,7 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service.lineage-libperfmgr
+    android.hardware.power-service.pixel-libperfmgr
 
 PRODUCT_PACKAGES += \
     libmtkperf_client_vendor \
@@ -297,14 +296,13 @@ PRODUCT_PACKAGES += \
 
 # Runtime Resource Overlays 
 PRODUCT_PACKAGES += \
+    AOSPAFrameworksRMX2020 \
     ApertureOverlayRMX2020 \
     ApertureQRScannerOverlayRMX2020 \
     CarrierConfigOverlayRMX2020 \
     FingerprintResOverlayRMX2020 \
     FrameworksResOverlayRMX2020 \
     Launcher3OverlayRMX2020 \
-    LineageSDKOverlayRMX2020 \
-    LineageSettingsProviderOverlayRMX2020 \
     SettingsOverlayRMX2020 \
     SettingsProviderOverlayRMX2020 \
     SettingsProviderOverlayRMX2027 \
@@ -331,22 +329,19 @@ PRODUCT_COPY_FILES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     hardware/google/interfaces \
+    hardware/google/pixel \
     hardware/google/pixel/pixelstats \
     hardware/google/pixel/power-libperfmgr \
     hardware/google/pixel/thermal \
     hardware/mediatek \
     hardware/mediatek/libmtkperf_client \
     hardware/mediatek/wlan/wifi_hal \
-    hardware/lineage/interfaces/power-libperfmgr \
     $(DEVICE_PATH)
 
 # Text classifier
 PRODUCT_PACKAGES += \
     libtextclassifier_hash.vendor
 
-# Touch
-PRODUCT_PACKAGES += \
-    vendor.lineage.touch-service.RMX2020
 
 # Thermal
 PRODUCT_PACKAGES += \
@@ -397,3 +392,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(DEVICE_PATH)/configs/wifi/,$(TARGET_COPY_OUT_VENDOR)/etc/wifi)
+
+# AOSPA: this is a MediaTek device
+PRODUCT_USES_QCOM_HARDWARE := false
