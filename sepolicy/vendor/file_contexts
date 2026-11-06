@@ -26,3 +26,6 @@
 
 # Power HAL (pixel-libperfmgr)
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power-service\.pixel-libperfmgr u:object_r:hal_power_default_exec:s0
+
+# Audio HAL service (MTK)
+/(vendor|system/vendor)/bin/hw/android\.hardware\.audio\.service\.mediatek u:object_r:hal_audio_default_exec:s0

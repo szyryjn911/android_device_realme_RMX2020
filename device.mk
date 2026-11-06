@@ -22,12 +22,14 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Audio
 $(call soong_config_set_bool,android_hardware_audio,skip_speaker_layout_channel_mask_field,true)
+$(call soong_config_set_bool,android_hardware_audio_mediatek,run_32bit,true)
 
 PRODUCT_PACKAGES += \
-    android.hardware.audio.service \
+    android.hardware.audio.service.mediatek \
     android.hardware.audio@7.0-impl:32 \
     android.hardware.audio.effect@7.0-impl:32 \
-    android.hardware.bluetooth.audio-impl
+    android.hardware.bluetooth.audio-impl \
+    android.hardware.bluetooth.audio-impl-mediatek-hidl
 
 PRODUCT_PACKAGES += \
     audio_policy.stub \
